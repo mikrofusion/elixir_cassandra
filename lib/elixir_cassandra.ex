@@ -1,0 +1,2 @@
+defmodule ElixirCassandra do
+end
