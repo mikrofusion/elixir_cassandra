@@ -33,4 +33,4 @@ config :cqerl,
   cassandra_nodes: [
     {"localhost", 9042}
   ],
-  keyspace: "system"
+  keyspace: "test"
