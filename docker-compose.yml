@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+  coordinator:
+    image: "cassandra"
+    build:
+      context: .
+    network_mode: bridge
+    ports:
+      - "9042:9042"
+      - "7199:7199"
+      - "9160:9160"
+
+  member_1:
+    image: "cassandra:latest"
+    network_mode: bridge
+    links:
+      - coordinator
+    depends_on:
+      - coordinator
+    environment:
+      CASSANDRA_SEEDS: coordinator

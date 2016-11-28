@@ -14,7 +14,12 @@ defmodule ElixirCassandra.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [
+      applications: [
+        :logger,
+        :cqex
+      ]
+    ]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +32,9 @@ defmodule ElixirCassandra.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:cqerl, github: "matehat/cqerl"},
+      {:cqex, "~> 0.2.0"},
+    ]
   end
 end

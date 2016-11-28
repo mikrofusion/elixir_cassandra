@@ -28,3 +28,9 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+
+config :cqerl,
+  cassandra_nodes: [
+    {"127.0.0.1", 9042}
+  ],
+  keyspace: "test"
